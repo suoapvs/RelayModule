@@ -20,7 +20,7 @@ class RelayModule final {
 	
 	private:
 		/**
-			Port number to be attached to the sensor.
+			Port number that is attached to the relay.
 		*/
 		int IN_pin = 0;
 	
@@ -35,7 +35,7 @@ class RelayModule final {
 		/**
 			Constructor.
 			@param IN_pin - a digital port number 
-			to be attached to the relay.
+			that is attached to the relay.
 		*/
 		RelayModule(const int IN_pin);
 		
