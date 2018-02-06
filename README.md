@@ -33,12 +33,21 @@ and Normal open (NO).
 
 ```cpp
 	/**
-		PIN - a digital port number that is attached to the relay.
+		DIGITAL_PIN - a digital port pin that 
+		is attached to the relay.
 		INVERT - invert relay signal:
 		true - LOW is a ON signal;
 		false - HIGH is a ON signal.
 	*/
-	RelayModule relay(PIN, INVERT);
+	RelayModule relay(DIGITAL_PIN, INVERT);
+	
+	/**
+		If you need to invert a sensor signal:
+		INVERT_SIGNAL:
+			true - invert a signal;
+			false - not invert a signal.
+	*/
+	RelayModule relay(DIGITAL_PIN, INVERT_SIGNAL);
 
 	// Turns ON the relay if it is off.
 	relay.on();
