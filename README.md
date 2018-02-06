@@ -35,11 +35,8 @@ and Normal open (NO).
 	/**
 		DIGITAL_PIN - a digital port pin that 
 		is attached to the relay.
-		INVERT - invert relay signal:
-		true - LOW is a ON signal;
-		false - HIGH is a ON signal.
 	*/
-	RelayModule relay(DIGITAL_PIN, INVERT);
+	RelayModule relay(DIGITAL_PIN);
 	
 	/**
 		If you need to invert a sensor signal:
