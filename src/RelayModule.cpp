@@ -9,14 +9,20 @@
 */
 #include "RelayModule.h"
 
-RelayModule::RelayModule(const int IN_pin) {
-	this->IN_pin = IN_pin;
-	init();
+RelayModule::RelayModule(const int IN_pin)
+ : RelayModule::RelayModule(IN_pin, false) {
 }
 
-RelayModule::RelayModule(const int IN_pin, const boolean invert) 
-: RelayModule::RelayModule(IN_pin) {
-	this->invert = invert;
+RelayModule::RelayModule(const int IN_pin, const boolean invert) {
+	this->IN_pin = IN_pin;
+	if (invert) {
+		this->onSignal = LOW;
+		this->offSignal = HIGH;
+	} else {
+		this->onSignal = HIGH;
+		this->offSignal = LOW;
+	}
+	init();
 }
 
 /**
@@ -49,19 +55,19 @@ void RelayModule::off() {
 }
 
 boolean RelayModule::isOn() {
-	return read() == onSignal();
+	return read() == this->onSignal;
 }
 
 boolean RelayModule::isOff() {
-	return read() == offSignal();
+	return read() == this->offSignal;
 }
 
 void RelayModule::turnOn() {
-	write(onSignal());
+	write(this->onSignal);
 }
 
 void RelayModule::turnOff() {
-	write(offSignal());
+	write(this->offSignal);
 }
 
 void RelayModule::write(const int signal) {
@@ -70,22 +76,4 @@ void RelayModule::write(const int signal) {
 	
 int RelayModule::read() {
 	return digitalRead(this->IN_pin);
-}
-
-/**
-	Return ON signal.
-	@return LOW if the invert value is true,
-	HIGH - otherwise.
-*/
-int RelayModule::onSignal() {
-	return (this->invert ? LOW : HIGH);
-}
-
-/**
-	Return OFF signal.
-	@return HIGH if the invert value is true,
-	LOW - otherwise.
-*/
-int RelayModule::offSignal() {
-	return (this->invert ? HIGH : LOW);
 }

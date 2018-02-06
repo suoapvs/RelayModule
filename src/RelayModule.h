@@ -1,6 +1,18 @@
 /**
 	RelayModule.h - The interface describes a set of methods 
 	for working with a digital relay module.
+	
+	Instantiation:
+		RelayModule relay(2);
+		
+	If you need to invert a sensor signal:
+		RelayModule relay(2, true);
+
+	Methods:
+		relay.on();
+		relay.off();
+		relay.isOn();
+		relay.isOff();
 
 	https://github.com/YuriiSalimov/RelayModule
 		
@@ -25,11 +37,16 @@ class RelayModule final {
 		int IN_pin = 0;
 	
 		/**
-			Invert relay signal:
-			true - LOW is a ON signal;
-			false - HIGH is a ON signal.
+			ON and OFF signal.
+			If invert signal:
+				onSignal = LOW
+				offSignal = HIGH
+			If not invert signal:
+				onSignal = HIGH
+				offSignal = LOW
 		*/
-		boolean invert = false;
+		int onSignal = 0;
+		int offSignal = 0;
 	
 	public:
 		/**
