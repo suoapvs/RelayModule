@@ -119,18 +119,6 @@ class RelayModule final {
 			@return relay signal
 		*/
 		int read();
-	
-		/**
-			Return ON signal.
-			@return relay on signal.
-		*/
-		int onSignal();
-
-		/**
-			Return OFF signal.
-			@return relay off signal.
-		*/
-		int offSignal();
 };
 
 #endif
