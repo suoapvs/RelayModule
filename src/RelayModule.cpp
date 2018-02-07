@@ -16,11 +16,11 @@ RelayModule::RelayModule(const int IN_pin)
 RelayModule::RelayModule(const int IN_pin, const boolean invert) {
 	this->IN_pin = IN_pin;
 	if (invert) {
-		this->onSignal = LOW;
-		this->offSignal = HIGH;
-	} else {
 		this->onSignal = HIGH;
 		this->offSignal = LOW;
+	} else {
+		this->onSignal = LOW;
+		this->offSignal = HIGH;
 	}
 	init();
 }
