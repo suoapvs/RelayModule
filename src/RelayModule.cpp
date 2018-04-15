@@ -13,24 +13,12 @@ RelayModule::RelayModule(const int IN_pin)
  : RelayModule::RelayModule(IN_pin, false) {
 }
 
-RelayModule::RelayModule(const int IN_pin, const boolean invert) {
+RelayModule::RelayModule(const int IN_pin, const boolean invertSignal) {
 	this->IN_pin = IN_pin;
-	if (invert) {
-		this->onSignal = HIGH;
-		this->offSignal = LOW;
-	} else {
-		this->onSignal = LOW;
-		this->offSignal = HIGH;
+	if (invertSignal) {
+		invert();
 	}
 	init();
-}
-
-/**
-	Destructor.
-	Turns off the relay before deleting the object.
-*/
-RelayModule::~RelayModule() {
-	turnOff();
 }
 
 /**
@@ -40,6 +28,14 @@ RelayModule::~RelayModule() {
 void RelayModule::init() {
 	pinMode(this->IN_pin, OUTPUT);
 	off();
+}
+
+/**
+	Destructor.
+	Turns off the relay before deleting the object.
+*/
+RelayModule::~RelayModule() {
+	turnOff();
 }
 
 void RelayModule::on() {
@@ -76,4 +72,14 @@ void RelayModule::write(const int signal) {
 	
 int RelayModule::read() {
 	return digitalRead(this->IN_pin);
+}
+
+void RelayModule::invert() {
+	if (this->onSignal == HIGH) {
+		this->onSignal = LOW;
+		this->offSignal = HIGH;
+	} else {
+		this->onSignal = HIGH;
+		this->offSignal = LOW;
+	}
 }
