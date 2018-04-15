@@ -15,7 +15,7 @@
 #define RELAY_PIN   1
 #define DELAY_TIME  1000
 
-RelayModule* relay;
+RelayModule* relay = NULL;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -29,6 +29,6 @@ void loop() {
   } else if (relay->isOff()) {
     relay->on(); // turn the relay on.
   }
-  delay(DELAY_TIME); // wait for a second.
+  delay(DELAY_TIME); // wait for a delay time.
 }
 
