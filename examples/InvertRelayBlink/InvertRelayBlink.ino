@@ -6,7 +6,7 @@
 
   https://github.com/YuriiSalimov/RelayModule
 
-  Created by Yurii Salimov, February, 2018.
+  Created by Yurii Salimov, April, 2018.
   Released into the public domain.
 */
 
