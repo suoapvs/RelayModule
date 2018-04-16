@@ -32,12 +32,14 @@ and Normal open (NO).
 ## Methods
 
 ```cpp
+    // Instantiation:
 	/**
-		DIGITAL_PIN - a digital port pin that 
+		DIGITAL_PIN - a digital port pin that
 		is attached to the relay.
 	*/
 	RelayModule relay(DIGITAL_PIN);
-	
+
+    // or
 	/**
 		If you need to invert a sensor signal:
 		INVERT_SIGNAL:
@@ -48,23 +50,23 @@ and Normal open (NO).
 
 	// Turns ON the relay if it is off.
 	relay.on();
-	
+
 	// Turns OFF the relay if it is on.
 	relay.off();
-	
+
 	/**
 		Checks if the relay is ON.
-		Return true if the relay is on, 
+		Return true if the relay is on,
 		false if the relay is off.
 	*/
 	relay.isOn();
-	
+
 	/**
 		Checks if the relay is OFF.
-		Return true if the relay is off, 
+		Return true if the relay is off,
 		false if the relay is on.
 	*/
 	relay.isOff();
 ```
 
-Created by Yurii Salimov.
+Created by [Yurii Salimov](mailto:yuriy.alex.salimov@gmail.com).
