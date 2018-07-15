@@ -12,7 +12,7 @@ RelayModule	KEYWORD1
 #   Methods and Functions (KEYWORD2)  #
 #######################################
 
-on		KEYWORD2
-off		KEYWORD2
+on	KEYWORD2
+off	KEYWORD2
 isOn	KEYWORD2
 isOff	KEYWORD2
