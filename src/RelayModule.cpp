@@ -75,11 +75,7 @@ int RelayModule::read() {
 }
 
 void RelayModule::invert() {
-	if (this->onSignal == HIGH) {
-		this->onSignal = LOW;
-		this->offSignal = HIGH;
-	} else {
-		this->onSignal = HIGH;
-		this->offSignal = LOW;
-	}
+  const int tempSignal = this->onSignal;
+  this->onSignal = this->offSignal;
+  this->offSignal = tempSignal;
 }
