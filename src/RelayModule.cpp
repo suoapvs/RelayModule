@@ -1,5 +1,5 @@
 /**
-	The class implements a set of methods of the RelayModule.h 
+	The class implements a set of methods of the RelayModule.h
 	interface for working with a digital relay module.
 
 	https://github.com/YuriiSalimov/RelayModule
@@ -25,7 +25,7 @@ RelayModule::RelayModule(const int IN_pin, const boolean invertSignal) {
 	Initialization of module.
 	Turns off the relay.
 */
-void RelayModule::init() {
+inline void RelayModule::init() {
 	pinMode(this->IN_pin, OUTPUT);
 	off();
 }
@@ -58,18 +58,18 @@ boolean RelayModule::isOff() {
 	return read() == this->offSignal;
 }
 
-void RelayModule::turnOn() {
+inline void RelayModule::turnOn() {
 	write(this->onSignal);
 }
 
-void RelayModule::turnOff() {
+inline void RelayModule::turnOff() {
 	write(this->offSignal);
 }
 
 void RelayModule::write(const int signal) {
 	digitalWrite(this->IN_pin, signal);
 }
-	
+
 int RelayModule::read() {
 	return digitalRead(this->IN_pin);
 }

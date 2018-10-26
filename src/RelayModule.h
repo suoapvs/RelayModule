@@ -1,5 +1,5 @@
 /**
-	RelayModule.h - The interface describes a set of methods 
+	RelayModule.h - The interface describes a set of methods
 	for working with a digital relay module.
 
 	Instantiation:
@@ -16,6 +16,9 @@
 		relay.isOn();
 		relay.isOff();
 
+	v.1.1.1:
+	- optimized calls of private methods.
+
 	https://github.com/YuriiSalimov/RelayModule
 
 	Created by Yurii Salimov, February, 2018.
@@ -28,7 +31,7 @@
 	#include <Arduino.h>
 #else
 	#include <WProgram.h>
-#endif 
+#endif
 
 class RelayModule final {
 
@@ -47,14 +50,14 @@ class RelayModule final {
 	public:
 		/**
 			Constructor.
-			@param IN_pin - a digital port number 
+			@param IN_pin - a digital port number
 			that is attached to the relay.
 		*/
 		RelayModule(const int IN_pin);
 
 		/**
 			Constructor.
-			@param IN_pin - a digital port number 
+			@param IN_pin - a digital port number
 			that is attached to the relay.
 			@param invertSignal - invert relay signal:
 				true - LOW is a ON signal;
@@ -76,14 +79,14 @@ class RelayModule final {
 
 		/**
 			Checks if the relay is on.
-			@return true if the relay is on, 
+			@return true if the relay is on,
 			false if the relay is off.
 		*/
 		boolean isOn();
 
 		/**
 			Checks if the relay is off.
-			@return true if the relay is off, 
+			@return true if the relay is off,
 			false if the relay is on.
 		*/
 		boolean isOff();
@@ -103,17 +106,17 @@ class RelayModule final {
 		/**
 			Initialization of module.
 		*/
-		void init();
+		inline void init();
 
 		/**
 			Turns on the relay.
 		*/
-		void turnOn();
+		inline void turnOn();
 
 		/**
 			Turns off the relay.
 		*/
-		void turnOff();
+		inline void turnOff();
 
 		/**
 			Wrintes a input signal to the relay.
