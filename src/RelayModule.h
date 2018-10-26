@@ -17,7 +17,8 @@
 		relay.isOff();
 
 	v.1.1.1:
-	- optimized calls of private methods.
+	- optimized calls of private methods;
+	- updated invert() method.
 
 	https://github.com/YuriiSalimov/RelayModule
 
@@ -39,7 +40,7 @@ class RelayModule final {
 		/**
 			Port number that is attached to the relay.
 		*/
-		int IN_pin = 0;
+		int IN_pin;
 
 		/**
 			ON and OFF signal.
