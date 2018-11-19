@@ -54,7 +54,7 @@ class RelayModule final {
 			@param IN_pin - a digital port number
 			that is attached to the relay.
 		*/
-		RelayModule(const int IN_pin);
+		RelayModule(int IN_pin);
 
 		/**
 			Constructor.
@@ -64,7 +64,7 @@ class RelayModule final {
 				true - LOW is a ON signal;
 				false - HIGH is a ON signal.
 		*/
-		RelayModule(const int IN_pin, const boolean invertSignal);
+		RelayModule(int IN_pin, boolean invertSignal);
 
 		~RelayModule();
 
@@ -123,7 +123,7 @@ class RelayModule final {
 			Wrintes a input signal to the relay.
 			@param value - a new relay signal.
 		*/
-		void write(const int signal);
+		void write(int signal);
 
 		/**
 			Reads and returns the relay signal.
