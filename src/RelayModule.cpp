@@ -10,15 +10,15 @@
 #include "RelayModule.h"
 
 RelayModule::RelayModule(const int IN_pin)
- : RelayModule::RelayModule(IN_pin, false) {
+  : RelayModule::RelayModule(IN_pin, false) {
 }
 
 RelayModule::RelayModule(const int IN_pin, const boolean invertSignal) {
-	this->IN_pin = IN_pin;
-	if (invertSignal) {
-		invert();
-	}
-	init();
+  this->IN_pin = IN_pin;
+  if (invertSignal) {
+    invert();
+  }
+  init();
 }
 
 /**
@@ -26,8 +26,8 @@ RelayModule::RelayModule(const int IN_pin, const boolean invertSignal) {
 	Turns off the relay.
 */
 inline void RelayModule::init() {
-	pinMode(this->IN_pin, OUTPUT);
-	off();
+  pinMode(this->IN_pin, OUTPUT);
+  off();
 }
 
 /**
@@ -35,43 +35,43 @@ inline void RelayModule::init() {
 	Turns off the relay before deleting the object.
 */
 RelayModule::~RelayModule() {
-	turnOff();
+  turnOff();
 }
 
 void RelayModule::on() {
-	if (isOff()) {
-		turnOn();
-	}
+  if (isOff()) {
+    turnOn();
+  }
 }
 
 void RelayModule::off() {
-	if (isOn()) {
-		turnOff();
-	}
+  if (isOn()) {
+    turnOff();
+  }
 }
 
 boolean RelayModule::isOn() {
-	return read() == this->onSignal;
+  return read() == this->onSignal;
 }
 
 boolean RelayModule::isOff() {
-	return read() == this->offSignal;
+  return read() == this->offSignal;
 }
 
 inline void RelayModule::turnOn() {
-	write(this->onSignal);
+  write(this->onSignal);
 }
 
 inline void RelayModule::turnOff() {
-	write(this->offSignal);
+  write(this->offSignal);
 }
 
 void RelayModule::write(const int signal) {
-	digitalWrite(this->IN_pin, signal);
+  digitalWrite(this->IN_pin, signal);
 }
 
 int RelayModule::read() {
-	return digitalRead(this->IN_pin);
+  return digitalRead(this->IN_pin);
 }
 
 void RelayModule::invert() {

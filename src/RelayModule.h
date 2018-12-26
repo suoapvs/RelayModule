@@ -45,8 +45,8 @@ class RelayModule final {
 		/**
 			ON and OFF signal.
 		*/
-		volatile int onSignal = LOW;
-		volatile int offSignal = HIGH;
+		int onSignal = LOW;
+		int offSignal = HIGH;
 
 	public:
 		/**
