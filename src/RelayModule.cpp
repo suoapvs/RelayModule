@@ -14,26 +14,13 @@ RelayModule::RelayModule(const int IN_pin)
 }
 
 RelayModule::RelayModule(const int IN_pin, const boolean invertSignal) {
-  this->IN_pin = IN_pin;
+  pinMode(this->IN_pin = IN_pin, OUTPUT);
   if (invertSignal) {
     invert();
   }
-  init();
-}
-
-/**
-	Initialization of module.
-	Turns off the relay.
-*/
-inline void RelayModule::init() {
-  pinMode(this->IN_pin, OUTPUT);
   off();
 }
 
-/**
-	Destructor.
-	Turns off the relay before deleting the object.
-*/
 RelayModule::~RelayModule() {
   turnOff();
 }

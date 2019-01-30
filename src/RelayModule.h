@@ -20,6 +20,9 @@
 	- optimized calls of private methods;
 	- updated invert() method.
 
+	v.1.1.2:
+	- removed deprecated init() method.
+
 	https://github.com/YuriiSalimov/RelayModule
 
 	Created by Yurii Salimov, February, 2018.
@@ -66,6 +69,10 @@ class RelayModule final {
 		*/
 		RelayModule(int IN_pin, boolean invertSignal);
 
+		/**
+			Destructor.
+			Turns off the relay before deleting the object.
+		*/
 		~RelayModule();
 
 		/**
@@ -104,11 +111,6 @@ class RelayModule final {
 		void invert();
 
 	private:
-		/**
-			Initialization of module.
-		*/
-		inline void init();
-
 		/**
 			Turns on the relay.
 		*/
