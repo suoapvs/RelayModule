@@ -69,4 +69,6 @@ and Normal open (NO).
 	relay.isOff();
 ```
 
-Created by [Yurii Salimov](mailto:yuriy.alex.salimov@gmail.com).
+See [examples](/examples)...
+
+Created by Yurii Salimov.
