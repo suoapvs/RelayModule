@@ -21,7 +21,8 @@
 	- updated invert() method.
 
 	v.1.1.2:
-	- removed deprecated init() method.
+	- removed deprecated init() method;
+	- added setState() method.
 
 	https://github.com/YuriiSalimov/RelayModule
 
@@ -84,6 +85,14 @@ class RelayModule final {
 			Turns off the relay if it is on.
 		*/
 		void off();
+
+		/**
+			Changes current state of the relay.
+			If the input parameter is true then turns on the relay,
+			otherwise - turns off the relay.
+			@param input - a new state (true / false)
+		*/
+		void setState(boolean input);
 
 		/**
 			Checks if the relay is on.

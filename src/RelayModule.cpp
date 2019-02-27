@@ -37,6 +37,14 @@ void RelayModule::off() {
   }
 }
 
+void RelayModule::setState(const boolean input) {
+  if (input) {
+    on();
+  } else {
+    off();
+  }
+}
+
 boolean RelayModule::isOn() {
   return read() == this->onSignal;
 }
