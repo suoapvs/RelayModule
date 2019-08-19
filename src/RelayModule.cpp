@@ -9,10 +9,6 @@
 */
 #include "RelayModule.h"
 
-RelayModule::RelayModule(const int IN_pin)
-  : RelayModule::RelayModule(IN_pin, false) {
-}
-
 RelayModule::RelayModule(const int IN_pin, const boolean invertSignal) {
   pinMode(this->IN_pin = IN_pin, OUTPUT);
   if (invertSignal) {
@@ -61,11 +57,11 @@ inline void RelayModule::turnOff() {
   write(this->offSignal);
 }
 
-void RelayModule::write(const int signal) {
+inline void RelayModule::write(const int signal) {
   digitalWrite(this->IN_pin, signal);
 }
 
-int RelayModule::read() {
+inline int RelayModule::read() {
   return digitalRead(this->IN_pin);
 }
 
