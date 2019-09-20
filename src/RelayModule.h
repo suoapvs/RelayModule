@@ -28,6 +28,9 @@
 	- optimized constructor;
 	- updated documentation.
 
+	v.1.3.4
+	- replaced "define" constants with "static const"
+
 	https://github.com/YuriiSalimov/RelayModule
 
 	Created by Yurii Salimov, February, 2018.
@@ -42,18 +45,18 @@
 	#include <WProgram.h>
 #endif
 
-#define RELAY_DEFAULT_INVERT_SIGNAL false
-
 class RelayModule final {
 
 	private:
+		static const boolean DEFAULT_INVERT_SIGNAL = false;
+
 		/**
-			Port number that is attached to the relay.
+		Port number that is attached to the relay.
 		*/
 		int IN_pin;
 
 		/**
-			ON and OFF signal.
+		ON and OFF signal.
 		*/
 		int onSignal = LOW;
 		int offSignal = HIGH;
@@ -70,7 +73,7 @@ class RelayModule final {
 		*/
 		RelayModule(
 			int IN_pin,
-			boolean invertSignal = RELAY_DEFAULT_INVERT_SIGNAL
+			boolean invertSignal = DEFAULT_INVERT_SIGNAL
 		);
 
 		/**
