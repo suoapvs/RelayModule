@@ -1,9 +1,4 @@
 /**
-	The class implements a set of methods of the RelayModule.h
-	interface for working with a digital relay module.
-
-	https://github.com/YuriiSalimov/RelayModule
-
 	Created by Yurii Salimov, December, 2017.
 	Released into the public domain.
 */
